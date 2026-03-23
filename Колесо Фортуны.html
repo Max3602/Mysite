@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колесо Фортуны</title>
+    <link rel="stylesheet" href="Колесо Фортуны.css">
+</head>
+<body>
+    <div class="shapka">
+        <div class="logo"></div>
+        <div class="LK" data-href="Лк.html">
+            <div class="avatar"></div>
+            <div class="nik">это ник</div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="promo-image"></div>
+        
+        <div class="center-column">
+            <div class="wheel-container">
+                <canvas id="wheel" width="400" height="400"></canvas>
+                <div class="wheel-pointer">▼</div>
+            </div>
+            <button class="spin-button" id="spinBtn">СТАРТ</button>
+        </div>
+        
+        <div class="right-column">
+            <div class="elements-panel">
+                <div class="elements-list" id="elementsList">
+                </div>
+                <div class="scrollbar">
+                    <div class="scroll-thumb"></div>
+                </div>
+            </div>
+            
+            <input type="text" class="element-input" id="newElement" placeholder="Введите новый элемент">
+            
+            <button class="add-button" id="addBtn">ДОБАВИТЬ</button>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+    <script src="Колесо Фортуны.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="Авторизация.css">
+</head>
+<body>
+    <div class="shapka">
+        <div class="logo"></div>
+    </div>
+    
+    <div class="main-content">
+        <div class="avtoriza">
+            <div class="nameboard">Авторизация</div>
+            <input type="text" class="login-input" placeholder="логин">
+            <input type="password" class="password-input" placeholder="Пароль">
+            <button class="avt">Войти</button>
+        </div>
+        
+        <button class="reg">Регистрация</button>
+        
+        <div class="admin-hidden-trigger" onclick="showAdminLogin()"></div>
+    </div>
+
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdminModal()">&times;</span>
+            <div class="nameboard">Вход для администратора</div>
+            <input type="text" id="adminLogin" class="login-input" placeholder="Логин администратора">
+            <input type="password" id="adminPassword" class="password-input" placeholder="Пароль">
+            <button class="avt" onclick="loginAdmin()">Войти в админ-панель</button>
+        </div>
+    </div>
+
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-panel-content">
+            <div class="admin-header">
+                <h2>Панель администратора</h2>
+                <button class="close-panel" onclick="closeAdminPanel()">×</button>
+            </div>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalUsers">0</div>
+                    <div class="stat-label">Всего пользователей</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="verifiedUsers">0</div>
+                    <div class="stat-label">Подтвержденных</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalGames">0</div>
+                    <div class="stat-label">Всего игр</div>
+                </div>
+            </div>
+
+            <div class="admin-actions">
+                <button class="admin-btn" onclick="exportUsers()">📥 Экспорт пользователей</button>
+                <button class="admin-btn" onclick="importUsers()">📤 Импорт пользователей</button>
+                <button class="admin-btn delete" onclick="deleteAllAccounts()">🗑️ Удалить ВСЕХ пользователей</button>
+                <button class="admin-btn" onclick="clearGuestHistory()">🧹 Очистить историю гостей</button>
+            </div>
+
+            <div class="users-list-container">
+                <h3>Список пользователей</h3>
+                <input type="text" class="search-input" placeholder="🔍 Поиск по имени, логину или email..." onkeyup="searchUsers(this.value)">
+                <div class="users-list" id="usersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+    <script src="Авторизация.js"></script>
+</body>
+</html>

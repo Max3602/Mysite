@@ -1,0 +1,349 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    background-image: url('1673349987_grizly-club-p-besshovnaya-tekstura-podezda-5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 110px;
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('1673349987_grizly-club-p-besshovnaya-tekstura-podezda-5.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: hue-rotate(300deg) saturate(1.2) brightness(1.1);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.shapka {
+    width: 100%;
+    height: 100px;
+    background: rgba(210, 203, 197, 0.9);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    position: fixed;
+    background-image: url("1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    top: 15px;
+    left: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    position: relative;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-header {
+    width: 300px;
+    height: 260px;
+    background-color: #084F7B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    margin-bottom: 25px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-bottom: 15px;
+}
+
+.nik {
+    font-size: 16px;
+}
+
+.games-section {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.last-game {
+    width: 320px;
+    height: 250px;
+    background-image: url("probder.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.border-name {
+    position: absolute;
+    top: 6px;
+    left: 86px;
+    background: #82492F;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid gold;
+}
+
+.result {
+    margin-top: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: white;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid gold;
+}
+
+.game-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.save, .del {
+    width: 90px;
+    height: 32px;
+    background-color: #82492F;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gold;
+    transition: all 0.3s ease;
+}
+
+.save:hover, .del:hover {
+    background-color: #A0522D;
+    transform: scale(1.02);
+    border-color: gold;
+}
+
+.save:active, .del:active {
+    transform: scale(0.98);
+}
+
+/* Кнопка "На главную" - отдельно между блоками */
+.exit {
+    width: 160px;
+    height: 40px;
+    background-color: #82492F;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid gold;
+    transition: all 0.3s ease;
+    margin: 0; /* Убираем лишние отступы */
+    align-self: center; /* Центрируем по вертикали */
+}
+
+.exit:hover {
+    background-color: #A0522D;
+    transform: scale(1.02);
+    border-color: gold;
+}
+
+.exit:active {
+    transform: scale(0.98);
+}
+
+/* Правая колонка с историей */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 320px;
+}
+
+.prev-games {
+    width: 320px;
+    height: 250px;
+    background-image: url("probder.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* Кастомный скролл как в колесе фортуны */
+.prev-games::-webkit-scrollbar {
+    width: 8px;
+}
+
+.prev-games::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+.prev-games::-webkit-scrollbar-thumb {
+    background: #82492F;
+    border-radius: 4px;
+    border: 1px solid gold;
+}
+
+.prev-games::-webkit-scrollbar-thumb:hover {
+    background: #A0522D;
+}
+
+.prev-game-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid gold;
+    transition: all 0.2s ease;
+    font-family: Arial, sans-serif;
+}
+
+.prev-game-item:hover {
+    background: rgba(139, 69, 19, 0.7);
+    transform: translateX(2px);
+    border-color: gold;
+}
+
+.game-number {
+    color: gold;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 30px;
+}
+
+.game-result {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer {
+    height: 90px;
+    width: 100%;
+    background-image: url("textur-gas-kvas-com-6yf4-p-tekstura-napolnoe-pokritie-beton-13.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.logout-section {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logout {
+    width: 200px;
+    height: 40px;
+    background-color: #82492F;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid gold;
+    transition: all 0.3s ease;
+}
+
+.logout:hover {
+    background-color: #A0522D;
+    transform: scale(1.02);
+    border-color: gold;
+}
+
+.logout:active {
+    transform: scale(0.98);
+}   
